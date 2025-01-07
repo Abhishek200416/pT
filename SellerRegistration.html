@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration - Patrinova</title>
+    <link rel="stylesheet" href="SellerRegistration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Seller Registration Form Section -->
+    <section id="seller-registration" class="seller-registration">
+        <div class="form-container">
+            <div class="logo-container">
+                <img src="images/Patrinova (3)-Photoroom.png" alt="Patrinova Logo" class="logo">
+            </div>
+
+            <h2>Seller Registration</h2>
+            <p>Fill in the details below to start selling your products on Patrinova and connect with the global Indian diaspora.</p>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <progress id="progress-bar" value="0" max="100"></progress>
+            </div>
+
+            <form action="#" method="POST" class="registration-form">
+
+                <!-- Step 1: Seller Details -->
+                <fieldset class="step" id="step-1">
+                    <legend>Step 1: Seller Details</legend>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                    <button type="button" class="next-btn" onclick="nextStep(2)">Next</button>
+                </fieldset>
+
+                <!-- Step 2: Business Details -->
+                <fieldset class="step" id="step-2">
+                    <legend>Step 2: Business Details</legend>
+                    <label for="address">Business Address:</label>
+                    <textarea id="address" name="address" rows="4" required placeholder="Enter your business address"></textarea>
+
+                    <label for="gst">GST Number:</label>
+                    <input type="text" id="gst" name="gst" required placeholder="Enter your GST number">
+
+                    <label for="products">Product Type:</label>
+                    <select id="products" name="products" required>
+                        <option value="puja-samagri">Puja Samagri</option>
+                        <option value="handicrafts">Handicrafts</option>
+                        <option value="traditional-attire">Traditional Attires</option>
+                        <option value="sweets">Sweets (Moya, etc.)</option>
+                        <option value="terracotta">Terracotta Art</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <button type="button" class="next-btn" onclick="nextStep(3)">Next</button>
+                    <button type="button" class="prev-btn" onclick="previousStep(1)">Back</button>
+                </fieldset>
+
+                <!-- Step 3: Business Credentials & Shipping -->
+                <fieldset class="step" id="step-3">
+                    <legend>Step 3: Business Credentials & Shipping</legend>
+                    <label for="business-credentials">Business Credentials (e.g., MSME Registration):</label>
+                    <input type="file" id="business-credentials" name="business-credentials" required>
+
+                    <label for="shipping">Shipping Availability (Domestic/International):</label>
+                    <select id="shipping" name="shipping" required>
+                        <option value="domestic">Domestic</option>
+                        <option value="international">International</option>
+                        <option value="both">Both</option>
+                    </select>
+
+                    <label for="seasonal-products">Do you have seasonal products?</label>
+
+                    <select id="seasonal-products" name="seasonal-products" required>
+                        <option value="Yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="May be future changes">May be future changes</option>
+                        
+                    </select>
+
+                    <button type="button" class="next-btn" onclick="nextStep(4)">Next</button>
+                    <button type="button" class="prev-btn" onclick="previousStep(2)">Back</button>
+                </fieldset>
+
+                <!-- Step 4: Payment Registration -->
+                <fieldset class="step" id="step-4">
+                    <legend>Step 4: Payment Registration</legend>
+                    <label for="bank-name">Bank Name:</label>
+                    <input type="text" id="bank-name" name="bank-name" required placeholder="Enter your bank name">
+
+                    <label for="account-number">Account Number:</label>
+                    <input type="text" id="account-number" name="account-number" required placeholder="Enter your account number">
+
+                    <label for="ifsc">IFSC Code:</label>
+                    <input type="text" id="ifsc" name="ifsc" required placeholder="Enter your IFSC code">
+
+                    <button type="button" class="next-btn" onclick="nextStep(5)">Next</button>
+                    <button type="button" class="prev-btn" onclick="previousStep(3)">Back</button>
+                </fieldset>
+
+                <!-- Step 5: Verification & Terms -->
+                <fieldset class="step" id="step-5">
+                    <legend>Step 5: Verification & Terms</legend>
+                    <label for="verification-code">Enter Verification Code:</label>
+                    <input type="text" id="verification-code" name="verification-code" required placeholder="Enter verification code sent to your email">
+                    <div id="loading-spinner" style="display:none;">Loading...</div>
+
+                    <div id="terms-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submit-btn" onclick="handleVerification()">Register as Seller</button>
+                    <button type="button" class="prev-btn" onclick="previousStep(4)">Back</button>
+                </fieldset>
+
+
+            </form>
+        </div>
+    </section>
+
+    <script src="SellerRegistration.js"></script>
+</body>
+
+</html>
